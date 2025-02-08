@@ -1,0 +1,15 @@
+langchain
+langchain-openai
+langchain-core
+python-dotenv
+streamlit==1.32.0
+google-generativeai==0.3.2
+langchain-community
+langserve
+fastapi==0.109.0
+uvicorn==0.27.0
+langchain-groq
+langchainhub
+langchain-objectbox
+langsmith
+langchain_google_genai

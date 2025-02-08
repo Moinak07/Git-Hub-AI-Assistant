@@ -1,0 +1,79 @@
+{
+    "url": "https://api.github.com/repos/apu52/Travel_Website/issues/1680",
+    "repository_url": "https://api.github.com/repos/apu52/Travel_Website",
+    "labels_url": "https://api.github.com/repos/apu52/Travel_Website/issues/1680/labels{/name}",
+    "comments_url": "https://api.github.com/repos/apu52/Travel_Website/issues/1680/comments",
+    "events_url": "https://api.github.com/repos/apu52/Travel_Website/issues/1680/events",
+    "html_url": "https://github.com/apu52/Travel_Website/issues/1680",
+    "id": 2764953905,
+    "node_id": "I_kwDOJ7iP0s6kzdkx",
+    "number": 1680,
+    "title": "[Feature Request]: Improve hover effect on navbar",
+    "user": {
+      "login": "kanak227",
+      "id": 171213649,
+      "node_id": "U_kgDOCjSDUQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/171213649?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kanak227",
+      "html_url": "https://github.com/kanak227",
+      "followers_url": "https://api.github.com/users/kanak227/followers",
+      "following_url": "https://api.github.com/users/kanak227/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kanak227/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kanak227/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kanak227/subscriptions",
+      "organizations_url": "https://api.github.com/users/kanak227/orgs",
+      "repos_url": "https://api.github.com/users/kanak227/repos",
+      "events_url": "https://api.github.com/users/kanak227/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kanak227/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "id": 5735253949,
+        "node_id": "LA_kwDOJ7iP0s8AAAABVdkHvQ",
+        "url": "https://api.github.com/repos/apu52/Travel_Website/labels/enhancement",
+        "name": "enhancement",
+        "color": "a2eeef",
+        "default": true,
+        "description": "New feature or request"
+      }
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 2,
+    "created_at": "2025-01-01T09:25:36Z",
+    "updated_at": "2025-01-10T04:28:57Z",
+    "closed_at": null,
+    "author_association": "NONE",
+    "sub_issues_summary": {
+      "total": 0,
+      "completed": 0,
+      "percent_completed": 0
+    },
+    "active_lock_reason": null,
+    "body": "### Is there an existing issue for this?\r\n\r\n- [X] I have searched the existing issues\r\n\r\n### Feature Description\r\n\r\nThe hover effect on navbar does not look good , better hover effects can be placed up in the navbar . Assign me this for KWOC\r\n\r\n### Use Case\r\n\r\nThe text visiblity on hovering over navbar items would increase and would look attractive\r\n\r\n### Benefits\r\n\r\n_No response_\r\n\r\n### Add ScreenShots/Videos\r\n![Screenshot 2025-01-01 145636](https://github.com/user-attachments/assets/d4086774-966c-4b0f-aed4-774fd3c2c098)\r\n\r\n\r\n_No response_\r\n\r\n### Priority\r\n\r\nHigh\r\n\r\n### Record\r\n\r\n- [X] I have read the Contributing Guidelines\r\n- [ ] I'm a  KWOC 2024 contributor\r\n- [X] I have starred the repository",
+    "closed_by": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/apu52/Travel_Website/issues/1680/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "timeline_url": "https://api.github.com/repos/apu52/Travel_Website/issues/1680/timeline",
+    "performed_via_github_app": null,
+    "state_reason": null
+  }

@@ -1,5 +1,5 @@
 import sys
-sys.path.append("C:/Users/rohit/langchain_framework") 
+sys.path.append("C:/Users/rohit/OneDrive/Desktop/AI Assistant/langchain_framework") 
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from config import GEMINI_API_KEY, GEMINI_MODEL

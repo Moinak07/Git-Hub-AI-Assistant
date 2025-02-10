@@ -1,5 +1,5 @@
 import sys
-sys.path.append("C:/Users/rohit/langchain_framework/utils")
+sys.path.append("C:/Users/rohit/OneDrive/Desktop/AI Assistant/langchain_framework/utils")
 import json
 import re
 from langchain.chains import LLMChain

@@ -39,61 +39,38 @@ export const getIssues = asyncHandler(async (req, res) => {
 });
 
 
-export const getPullRequests = asyncHandler(async (req, res) => {
-    try {
-      const response = await axios.get(`${GITHUB_API_BASE}/pulls`, { headers: HEADERS });
-      const processedPRs = response.data.map(pr => ({
-        title: pr.title,
-        body: pr.body,
-        user: pr.user.login,
-        state: pr.state,
-        created_at: pr.created_at,
-        updated_at: pr.updated_at,
-        merged_at: pr.merged_at,
-        html_url: pr.html_url,
-        commits_url: pr.commits_url,
-        files_url: `${GITHUB_API_BASE}/pulls/${pr.number}/files`
-      }));
-  
-      return res.status(200).json(new ApiResponse(200, processedPRs));
-    } catch (error) {
-      throw new ApiError(500, error.message);
+export const getFirstPullRequest = asyncHandler(async(req,res)=>{
+  try {
+    const response = await axios.get(`${GITHUB_API_BASE}/pulls`,{headers:HEADERS});
+    if(response.data.length === 0){
+      throw new ApiError(404,"No pull requests found")
     }
-  });
-  
+    const firstPR = response.data[0]
+    const fileResponse = await axios.get(`${GITHUB_API_BASE}/pulls/${firstPR.number}/files`,{headers:HEADERS});
+    const files = fileResponse.data.map(file=>({
+      filename:file.filename,
+      status:file.status,
+      additions:file.additions,
+      deletions:file.deletions,
+      changes:file.changes,
+      patch:file.patch || null
+    }))
+    const processedPR = {
+      title: firstPR.title,
+      body: firstPR.body,
+      user: firstPR.user.login,
+      state: firstPR.state,
+      created_at: firstPR.created_at,
+      updated_at: firstPR.updated_at,
+      merged_at: firstPR.merged_at,
+      html_url: firstPR.html_url,
+      commits_url: firstPR.commits_url,
+      files
+    };
+    return res.status(200).json(new ApiResponse(200, processedPR));
+  } catch (error) {
+    throw new ApiError(500, error.message);
+  }
+})
 
-  export const getModifiedFiles = asyncHandler(async (req, res) => {
-    try {
-      const { prNumber } = req.params;
-      const response = await axios.get(`${GITHUB_API_BASE}/pulls/${prNumber}/files`, { headers: HEADERS });
-  
-      const modifiedFiles = response.data.map(file => ({
-        filename: file.filename,
-        status: file.status,
-        changes: file.changes,
-        patch: file.patch || "No patch available"
-      }));
-  
-      return res.status(200).json(new ApiResponse(200, modifiedFiles));
-    } catch (error) {
-      throw new ApiError(500, error.message);
-    }
-  });
-
-  export const getPRCommits = asyncHandler(async (req, res) => {
-    try {
-      const { prNumber } = req.params;
-      const response = await axios.get(`${GITHUB_API_BASE}/pulls/${prNumber}/commits`, { headers: HEADERS });
-      const commits = response.data.map(commit => ({
-        sha: commit.sha,
-        message: commit.commit.message,
-        author: commit.commit.author.name,
-        date: commit.commit.author.date
-      }));
-      return res.status(200).json(new ApiResponse(200, commits));
-    } catch (error) {
-      throw new ApiError(500, error.message);
-    }
-  });
-  
 

@@ -1,7 +1,16 @@
 import json
 import re
+import os
 import sys
-sys.path.append("C:/Users/rohit/OneDrive/Desktop/AI Assistant/langchain_framework/utils")
+from dotenv import load_dotenv
+load_dotenv()
+
+util_path = os.getenv("UTIL_PATH")
+
+if util_path:
+    sys.path.append(util_path)
+else:
+    print("Warning: PROJECT_PATH is not set in the .env file.")
 
 from flask import Flask, request, jsonify
 import requests
@@ -12,7 +21,7 @@ from langchain_setup import get_llm
 
 app = Flask(__name__)
 
-EXPRESS_BACKEND_URL = "https://04f1-115-42-32-106.ngrok-free.app/api/github/issues"  # Replace with actual backend URL
+EXPRESS_BACKEND_URL = "http://localhost:3000/api/github/issues"  # Replace with actual backend URL
 
 def generate_test_cases(patch_data):
     """Generates test cases from the patch using an LLM."""

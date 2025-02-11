@@ -1,5 +1,15 @@
 import sys
-sys.path.append("C:/Users/rohit/OneDrive/Desktop/AI Assistant/langchain_framework/utils")
+import os
+
+from dotenv import load_dotenv
+load_dotenv()
+
+util_path = os.getenv("UTIL_PATH")
+
+if util_path:
+    sys.path.append(util_path)
+else:
+    print("Warning: PROJECT_PATH is not set in the .env file.")
 import json
 import re
 from langchain.chains import LLMChain
@@ -14,7 +24,7 @@ import requests
 
 app = Flask(__name__)
 
-EXPRESS_BACKEND_URL = "https://d8cf-2401-4900-75ac-dfbc-c520-b336-2452-81cc.ngrok-free.app/api/github/issues"
+EXPRESS_BACKEND_URL = "https://04f1-115-42-32-106.ngrok-free.app/api/github/issues"
  # Replace with your actual Express backend URL
 
 

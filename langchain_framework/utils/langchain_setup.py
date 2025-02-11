@@ -1,8 +1,20 @@
+import os
 import sys
-sys.path.append("C:/Users/rohit/OneDrive/Desktop/AI Assistant/langchain_framework") 
+from dotenv import load_dotenv
+load_dotenv()
+
+# Retrieve the path from environment variables
+project_path = os.getenv("PROJECT_PATH")
+
+if project_path:
+    sys.path.append(project_path)
+else:
+    print("Warning: PROJECT_PATH is not set in the .env file.")
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from config import GEMINI_API_KEY, GEMINI_MODEL
+
+
 
 def get_llm():
     """Initialize LangChain LLM with the Gemini API."""

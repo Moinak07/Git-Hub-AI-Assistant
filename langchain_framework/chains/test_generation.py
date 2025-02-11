@@ -21,7 +21,7 @@ from langchain_setup import get_llm
 
 app = Flask(__name__)
 
-EXPRESS_BACKEND_URL = "http://localhost:3000/api/github/issues"  # Replace with actual backend URL
+EXPRESS_BACKEND_URL = "http://localhost:3000/api/github/pulls"  # Replace with actual backend URL
 
 def generate_test_cases(patch_data):
     """Generates test cases from the patch using an LLM."""
@@ -73,7 +73,7 @@ def fetch_and_generate_tests():
         issue_data = response.json()
         patches = [file.get("patch", "") for file in issue_data.get("files", []) if "patch" in file]
         patch_data = "\n".join(patches)
-        
+        print(patches)
         test_cases = generate_test_cases(patch_data)
         return jsonify(test_cases)
     except requests.RequestException as e:

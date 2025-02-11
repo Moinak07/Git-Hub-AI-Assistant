@@ -14,7 +14,8 @@ import requests
 
 app = Flask(__name__)
 
-EXPRESS_BACKEND_URL = "https://c9d1-115-42-32-106.ngrok-free.app/api/github/issues"  # Replace with your actual Express backend URL
+EXPRESS_BACKEND_URL = "https://d8cf-2401-4900-75ac-dfbc-c520-b336-2452-81cc.ngrok-free.app/api/github/issues"
+ # Replace with your actual Express backend URL
 
 
 def analyze_github_issue(issue_data):

@@ -73,4 +73,18 @@ export const getFirstPullRequest = asyncHandler(async(req,res)=>{
   }
 })
 
+export const receiveTestCases = asyncHandler(async (req, res) => {
+  try {
+    const { test_cases } = req.body;
 
+    if (!test_cases || !Array.isArray(test_cases)) {
+      throw new ApiError(400, "Invalid test cases received");
+    }
+
+    console.log("\n🔹 Received Test Cases from Flask:\n", test_cases);
+
+    return res.status(200).json(new ApiResponse(200, { message: "Test cases received", test_cases }));
+  } catch (error) {
+    throw new ApiError(500, error.message);
+  }
+});

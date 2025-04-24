@@ -3,7 +3,7 @@ import sys
 from dotenv import load_dotenv
 load_dotenv()
 
-# Retrieve the path from environment variables
+# Retrieve the path from environment variablescd
 project_path = os.getenv("PROJECT_PATH")
 
 if project_path:

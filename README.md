@@ -121,14 +121,6 @@ node index.js
 - **JavaScript/Node.js**: Express, Axios
 - **GitHub REST API**
 
----
 
-## Authors & License
-- Author: [Your Name Here]
-- License: MIT (or specify your license)
 
----
 
-## Notes
-- This project is modular and can be extended to support more LLMs or additional code analysis features.
-- Make sure to keep your API keys secure and never commit them to version control.
